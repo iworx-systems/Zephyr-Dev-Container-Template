@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "cortex-debug",
+        "preLaunchTask": "launchAppDebug",
+        "request": "launch",
+        "servertype": "external",
+        "name": "Debug App",
+        "rtos": "Zephyr",
+        "gdbTarget": "localhost:2331",
+        "executable": "${workspaceRoot}/build/app/zephyr/zephyr.elf",
+        "armToolchainPath": "/opt/zephyr-sdk/arm-zephyr-eabi/bin",
+        "toolchainPrefix": "arm-zephyr-eabi",
+        "showDevDebugOutput": "raw",
+        "breakAfterReset": true,
+        "runToEntryPoint": "main",
+        //"svdPath": "${workspaceRoot}/.devcontainer/en.STM32U5_svd/STM32U5_svd/STM32U5_svd_V1.1/STM32U575.svd",
+        "preRestartCommands": [
+          "monitor reset 0"
+        ]
+      },
+      {
+        "type": "cortex-debug",
+        "preLaunchTask": "launchMcubootDebug",
+        "request": "launch",
+        "servertype": "external",
+        "name": "Debug MCUboot",
+        "rtos": "Zephyr",
+        "gdbTarget": "localhost:2331",
+        "executable": "${workspaceRoot}/build/mcuboot/zephyr/zephyr.elf",
+        "armToolchainPath": "/opt/zephyr-sdk/arm-zephyr-eabi/bin",
+        "toolchainPrefix": "arm-zephyr-eabi",
+        "showDevDebugOutput": "raw",
+        "breakAfterReset": true,
+        "runToEntryPoint": "main",
+        //"svdPath": "${workspaceRoot}/.devcontainer/en.STM32U5_svd/STM32U5_svd/STM32U5_svd_V1.1/STM32U575.svd",
+        "preRestartCommands": [
+          "monitor reset 0"
+        ]
+    }
+    ]
+  }

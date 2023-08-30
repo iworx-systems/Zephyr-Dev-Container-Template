@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "compilerPath": "${ZEPHYR_SDK_INSTALL_DIR}/${TOOLCHAIN}/bin/${TOOLCHAIN}-gcc",
+            "compileCommands": "build/app/compile_commands.json",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-arm",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

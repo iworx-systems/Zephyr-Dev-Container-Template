@@ -1,0 +1,49 @@
+#
+# Copyright (c) 2023 iWorx Systems Inc.
+#
+# SPDX-License-Identifier: BSD-Protection
+#
+
+manifest:
+  remotes:
+    - name: ncs
+      url-base: https://github.com/nrfconnect
+    - name: antmicro
+      url-base: https://github.com/antmicro
+    - name: scottl_private
+      url-base: git@github.com:scottlaboe
+    - name: scottl_public
+      url-base: https://github.com/scottlaboe
+
+  projects:
+    # Zephyr
+    - name: zephyr
+      remote: scottl_public
+      revision: main
+      import:
+        path-prefix: zephyr_project
+        name-allowlist:
+          - hal_stm32
+          - hal_nordic
+          - cmsis
+          - segger
+          - nanopb
+          - net-tools
+          - tinycrypt
+          - mcuboot
+
+    # Cmock/Unity module
+    - name: test
+      remote: antmicro
+      revision: main
+      repo-path: zephyr-cmock-unity-module
+      import: true
+
+    # Drivers
+    - name: drivers
+      remote: scottl_private
+      repo-path: zephyr-drivers.git
+      revision: main
+
+  self:
+    path: WiFi-Acquisition-Firmware

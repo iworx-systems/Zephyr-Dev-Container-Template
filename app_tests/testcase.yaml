@@ -1,0 +1,9 @@
+tests:
+  app.wifi.connectivity:
+    platform_allow: nucleo_l552ze_q nucleo_U575zi_q
+    tags: wifi connectivity
+    timeout: 360
+    integration_platforms:
+      - nucleo_l552ze_q
+    sysbuild: True
+    harness: console

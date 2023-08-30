@@ -1,0 +1,120 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "west build --sysbuild -b qemu_x86_64 -p auto app",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Run Tests",
+            "type": "shell",
+            "command": " west build -b qemu_x86_64 app_tests -p always -t run",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Tests",
+            "type": "shell",
+            "command": " west build -b qemu_x86_64 app_tests -p always",
+            "problemMatcher": []
+        },
+        {
+            "label": "Generate Renode Device Tree",
+            "type": "shell",
+            //Replace "rpi_pico" with the target for your project
+            "command": "zephyr/scripts/renode/genRenodeRepl.sh rpi_pico",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Flash",
+            "type": "shell",
+            "command": "west flash",
+            "problemMatcher": []
+        },
+        {
+            "label": "launchSerialTerminal",
+            "type": "shell",
+            "command": "minicom -b 115200 -D /dev/ttyACM0",
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "pattern":[
+                        {
+                            "regexp": "^([^\\\\s].*)\\\\((\\\\d+,\\\\d+)\\\\):\\\\s*(.*)$",
+                            "file": 1,
+                            "location": 2,
+                            "message": 3
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": {
+                          "regexp": "(.*?)"
+                        },
+                        "endsPattern": {
+                          "regexp": "Welcome to minicom.*"
+                        }
+                    }
+                }
+            ],
+            "group": {
+                "kind": "test"
+            }
+        },
+        {
+            "label": "launchAppDebug",
+            "hide": true,
+            "type": "process",
+            "command": "west",
+            "isBackground": true,
+            "args": [
+                "debugserver",
+                "--runner", "jlink"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "group": "debug"
+            }
+        },
+        {
+            "label": "launchMcubootDebug",
+            "hide": true,
+            "type": "process",
+            "command": "west",
+            "isBackground": true,
+            "args": [
+                "debugserver",
+                "--runner", "jlink",
+                "--domain", "mcuboot"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "group": "debug"
+            }
+        },
+
+    ]
+}
