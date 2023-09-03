@@ -74,6 +74,9 @@ If you are using the ST-Link Nucleo L552ZEQ board and its built in programmer yo
 ### Sysbuild
 The "app/sysbuild" folder contains some example configs/overlays for the app and mcuboot. These are only present to give guidance on how you can add your own files. If you don't want to use sysbuild you can move the "prj.conf" in the "sysbuild/app" folder into "app" and delete the sysbuild folder. You will also need to remove "test_sysbuild()" from "app/CMakeLists.txt". For more infomartion on sysbuild refer to [Zephyr's documentation](https://docs.zephyrproject.org/latest/build/sysbuild/index.html).
 
+# Static Code Analysis
+Static code analysis is completed at build and served at "http://localhost:8001" using CodeChecker. Once the dev container has finished launching the CodeChecker server will be accessible.
+
 # References
   
 The Zephyr SDK installation portion of the Dockerfile is base on https://github.com/beriberikix/zephyr-docker
