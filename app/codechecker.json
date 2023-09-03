@@ -1,0 +1,20 @@
+{
+    "analyze": [
+      "--analyzer-config",
+      "clangsa:unroll-loops=true",
+      "--checker-config",
+      "--report-hash", "context-free-v2",
+      "--verbose=info",
+      "--clean",
+      "--skip",
+      "${PRJ_ROOT_DIR}/app/codecheck_skip.txt"
+    ],
+    "parse": [
+      "--trim-path-prefix",
+      "$HOME/workspace"
+    ],
+    "server": [
+      "--workspace=$HOME/workspace",
+      "--port=9090"
+    ]
+}

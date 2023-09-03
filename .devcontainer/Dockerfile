@@ -109,7 +109,9 @@ RUN apt-get -y update \
 RUN export jlink_install_dir=$(find ${JLINK_INSTALL_LOC} -name JLink_Linux_V*_$(uname -m)) \
   && echo "Using JLink Installation at: ${jlink_install_dir}" \
   && chmod a-w ${jlink_install_dir} \
-  && echo "export PATH=${PATH}:${jlink_install_dir}" >> /etc/bash.bashrc
+  && echo "export PATH=${PATH}:${jlink_install_dir}" >> /etc/bash.bashrc \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 FROM jlink AS cmock_unity_module
 
@@ -185,6 +187,25 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+FROM net_tools AS codechecker
+
+RUN \
+  apt-get -y update \
+  && apt-get -y install \
+  python3 \
+  python3-pip \
+  python3-wheel \
+  clang-tools \
+  cppcheck \
+  clang-tidy \
+  && pip3 install codechecker \
+  && apt-get remove -y --purge \
+  python3-pip \
+  python3-wheel \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+
 # !!! Set this to the name of the root folder in your workspace !!!
 ENV PRJ_ROOT_DIR /workspaces/Zephyr-Dev-Container-Template
 
@@ -192,3 +213,6 @@ ENV TEST_DIR ${PRJ_ROOT_DIR}/app_tests
 ENV APP_DIR ${PRJ_ROOT_DIR}/app
 ENV ZEPHYR_BASE ${PRJ_ROOT_DIR}/zephyr_project/zephyr
 ENV NET_TOOLS_BASE ${PRJ_ROOT_DIR}/zephyr_project/tools/net-tools
+ENV APP_CODECHECKER_CONFIG_FILE ${PRJ_ROOT_DIR}/app/codechecker.json
+
+CMD [ "(test -d .west || (west init -l app && west update && cd $NET_TOOLS_BASE && make)) && west update" ]

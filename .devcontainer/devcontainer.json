@@ -2,7 +2,10 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
 	"name": "Zephyr Development Environment",
-	"dockerFile": "Dockerfile",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
 	"customizations": {
 		//Configure properties specific to VS Code.
 		"vscode": {
@@ -23,13 +26,7 @@
 			]
 		}
 	},
-	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
-	},
-	"runArgs": ["--init"],
-	"postStartCommand": "(test -d .west || (west init -l app && west update && cd $NET_TOOLS_BASE && make)) && west update",
-	"remoteEnv": { 
-		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
-	},
+	"features": {"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}},
+	"remoteEnv": { "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"},
 	"privileged": true
 }
