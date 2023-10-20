@@ -2,16 +2,11 @@
 cmake_minimum_required(VERSION 3.20.0)
 
 
-#******************* PROGRAMMING/DEBUG ****************
-
-set(BOARD_FLASH_RUNNER jlink)
-set(BOARD_DEBUG_RUNNER jlink)
-
 #******************* STATIC CODE ANALYSIS ****************
-
-set(ZEPHYR_SCA_VARIANT codechecker)
-set(CODECHECKER_ANALYZE_OPTS "--config;$ENV{APP_CODECHECKER_CONFIG_FILE};--timeout;60")
-set(CODECHECKER_STORE_OPTS "--name;build;--url;localhost:8001/Default")
+# message(STATUS "Codechecker config: $ENV{APP_CODECHECKER_CONFIG_FILE}")
+# set(ZEPHYR_SCA_VARIANT codechecker)
+# set(CODECHECKER_ANALYZE_OPTS "--config;$ENV{APP_CODECHECKER_CONFIG_FILE};--timeout;60")
+# set(CODECHECKER_STORE_OPTS "--name;build;--url;localhost:8001/Default")
 
 #*********************** ZEPHYR ***********************
 

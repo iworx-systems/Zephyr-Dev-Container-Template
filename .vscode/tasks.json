@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "west build --sysbuild -b qemu_x86_64 -p auto app",
+            "command": "west build --sysbuild -b numaker_pfm_m467 -p auto app",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -39,14 +39,30 @@
         {
             "label": "Flash",
             "type": "shell",
-            "command": "west flash",
+            "command": "scripts/runNulinkCMD.sh -C && scripts/runNulinkCMD.sh -W APROM ${env:WIN_PROG_ZEPHYR_BIN} 1 && scripts/runNulinkCMD.sh -S && scripts/runNulinkCMD.sh -T",
             "problemMatcher": []
         },
         {
-            "label": "launchSerialTerminal",
+            "label": "Reset",
             "type": "shell",
-            "command": "minicom -b 115200 -D /dev/ttyACM0",
+            "command": "scripts/runNulinkCMD.sh -C && scripts/runNulinkCMD.sh -S",
+            "problemMatcher": []
+        },
+        {
+            "label": "launchAppDebug",
+            "type": "process",
+            "command": "scripts/runGdbServer.sh",
             "isBackground": true,
+            "args": [
+                "-s", "X:\\dev_tools\\Nuvoton_OpenOCD\\scripts",
+                "-f", "interface\\nulink.cfg",
+                "-f", "target\\numicroM4.cfg",
+                "-c", "'tcl_port 6333'",
+                "-c", "'telnet_port 4444'",
+                "-c ", "'gdb_port 3333'",
+                "-c", "init",
+                "-c", "'reset init'"
+            ],
             "problemMatcher": [
                 {
                     "pattern":[
@@ -63,28 +79,13 @@
                           "regexp": "(.*?)"
                         },
                         "endsPattern": {
-                          "regexp": "Welcome to minicom.*"
+                          "regexp": "target halted due to debug-request*"
                         }
                     }
                 }
             ],
-            "group": {
-                "kind": "test"
-            }
-        },
-        {
-            "label": "launchAppDebug",
-            "hide": true,
-            "type": "process",
-            "command": "west",
-            "isBackground": true,
-            "args": [
-                "debugserver",
-                "--runner", "jlink"
-            ],
-            "problemMatcher": [],
             "presentation": {
-                "echo": false,
+                "echo": true,
                 "reveal": "always",
                 "focus": true,
                 "panel": "shared",
@@ -93,28 +94,5 @@
                 "group": "debug"
             }
         },
-        {
-            "label": "launchMcubootDebug",
-            "hide": true,
-            "type": "process",
-            "command": "west",
-            "isBackground": true,
-            "args": [
-                "debugserver",
-                "--runner", "jlink",
-                "--domain", "mcuboot"
-            ],
-            "problemMatcher": [],
-            "presentation": {
-                "echo": false,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false,
-                "group": "debug"
-            }
-        },
-
     ]
 }

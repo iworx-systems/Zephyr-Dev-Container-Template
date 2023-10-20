@@ -6,8 +6,6 @@
 
 manifest:
   remotes:
-    - name: ncs
-      url-base: https://github.com/nrfconnect
     - name: antmicro
       url-base: https://github.com/antmicro
     - name: scottl_private
@@ -23,12 +21,9 @@ manifest:
       import:
         path-prefix: zephyr_project
         name-allowlist:
-          - hal_stm32
-          - hal_nordic
+          - hal_nuvoton
           - cmsis
           - segger
-          - nanopb
-          - net-tools
           - tinycrypt
           - mcuboot
 
@@ -39,11 +34,17 @@ manifest:
       repo-path: zephyr-cmock-unity-module
       import: true
 
-    # Drivers
-    - name: drivers
+    # Boards
+    - name: iworx-zephyr-boards
       remote: scottl_private
-      repo-path: zephyr-drivers.git
+      repo-path: iworx-zephyr-boards.git
+      revision: main
+
+    # Drivers
+    - name: iworx-zephyr-drivers
+      remote: scottl_private
+      repo-path: iworx-zephyr-drivers.git
       revision: main
 
   self:
-    path: WiFi-Acquisition-Firmware
+    path: Zephyr-Dev-Container-Template

@@ -22,11 +22,15 @@
 				"bierner.github-markdown-preview",
 				"ms-vscode.vscode-embedded-tools",
 				"zxh404.vscode-proto3",
-				"ms-azuretools.vscode-docker"
+				"ms-azuretools.vscode-docker",
+				"mads-hartmann.bash-ide-vscode"
 			]
 		}
 	},
 	"features": {"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}},
+	"init": true,
+	"privileged": true,
 	"remoteEnv": { "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"},
-	"privileged": true
+	"initializeCommand": "mkdir -p tools/tmp && nohup bash -c scripts/init.sh > tools/tmp/init.log",
+	"postStartCommand": "(test -d .west || (west init -l app && west update)) && west update"
 }

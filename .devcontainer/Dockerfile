@@ -21,7 +21,7 @@ RUN \
 
 FROM west AS python
 
-ARG ZEPHYR_VERSION=v3.3.0
+ARG ZEPHYR_VERSION=v3.4.0
 ENV ZEPHYR_VERSION=${ZEPHYR_VERSION}
 
 RUN \
@@ -54,7 +54,7 @@ RUN \
 
 FROM python AS sdk
 
-ARG ZEPHYR_SDK_VERSION=0.16.0
+ARG ZEPHYR_SDK_VERSION=0.16.1
 ARG ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
 ENV ZEPHYR_SDK_INSTALL_DIR=${ZEPHYR_SDK_INSTALL_DIR}
 ARG TOOLCHAIN=arm-zephyr-eabi
@@ -90,30 +90,7 @@ RUN  apt-get -y update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-FROM sdk AS jlink
-
-ARG JLINK_INSTALL_LOC=/opt/SEGGER
-
-#Add local Segger package
-ADD JLink_Linux*.tgz ${JLINK_INSTALL_LOC}
-
-#Install dependencies
-RUN apt-get -y update \
-  && apt-get -y install --no-install-recommends \
-  libfreetype6 libsm6 libxrender1 libxrandr2 \
-  libxfixes3 libxcursor1 libfontconfig1 \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-#Set permissions and add location to path
-RUN export jlink_install_dir=$(find ${JLINK_INSTALL_LOC} -name JLink_Linux_V*_$(uname -m)) \
-  && echo "Using JLink Installation at: ${jlink_install_dir}" \
-  && chmod a-w ${jlink_install_dir} \
-  && echo "export PATH=${PATH}:${jlink_install_dir}" >> /etc/bash.bashrc \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-FROM jlink AS cmock_unity_module
+FROM sdk AS cmock_unity_module
 
 RUN \
   apt-get -y update \
@@ -123,45 +100,7 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-FROM cmock_unity_module AS renode
-
-ARG RENODE_VERSION=1.13.3
-ARG RENODE_INSTALL_DIR=/opt/renode
-ARG RENODE_ARCHIVE=renode-${RENODE_VERSION}.linux-portable.tar.gz
-
-RUN \
-    apt-get -y update && \
-    apt-get -y install --no-install-recommends \
-    wget \
-    python3 \
-    python3-pip \
-    python3-wheel \
-    mono-complete \
-    && mkdir -p ${RENODE_INSTALL_DIR} \
-    && wget https://github.com/renode/renode/releases/download/v${RENODE_VERSION}/${RENODE_ARCHIVE} \
-    && tar xf ${RENODE_ARCHIVE} -C ${RENODE_INSTALL_DIR} --strip-components=1 \
-    && rm ./${RENODE_ARCHIVE} \
-    && chmod a-w ${RENODE_INSTALL_DIR} \
-    && echo "export PATH=${PATH}:${RENODE_INSTALL_DIR}" >> /etc/bash.bashrc \
-    && pip3 install git+https://github.com/antmicro/dts2repl.git \
-    && apt-get remove -y --purge \
-    wget \
-    python3-pip \
-    python3-wheel \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-#Installing nano for convenience
-FROM renode AS nano
-
-RUN \
-    apt-get -y update && \
-    apt-get -y install --no-install-recommends \
-    nano \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-FROM nano AS qemu_x86
+FROM cmock_unity_module AS qemu_x86
 
 RUN \
   apt-get -y update \
@@ -170,25 +109,16 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-FROM qemu_x86 AS net_tools
+FROM qemu_x86 AS shell_tools
 
 RUN \
   apt-get -y update \
   && apt-get -y install \
-  socat \
-  iproute2 \
-  libpcap-dev \
-  autoconf \
-  libtool \
-  net-tools \
-  iputils-ping \
-  netcat \
-  bridge-utils \
+  shellcheck \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-FROM net_tools AS codechecker
-
+FROM shell_tools as codechecker
 RUN \
   apt-get -y update \
   && apt-get -y install \
@@ -205,8 +135,7 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-
-# !!! Set this to the name of the root folder in your workspace !!!
+# !!! This must match the workspace root !!!
 ENV PRJ_ROOT_DIR /workspaces/Zephyr-Dev-Container-Template
 
 ENV TEST_DIR ${PRJ_ROOT_DIR}/app_tests
@@ -214,5 +143,3 @@ ENV APP_DIR ${PRJ_ROOT_DIR}/app
 ENV ZEPHYR_BASE ${PRJ_ROOT_DIR}/zephyr_project/zephyr
 ENV NET_TOOLS_BASE ${PRJ_ROOT_DIR}/zephyr_project/tools/net-tools
 ENV APP_CODECHECKER_CONFIG_FILE ${PRJ_ROOT_DIR}/app/codechecker.json
-
-CMD [ "(test -d .west || (west init -l app && west update && cd $NET_TOOLS_BASE && make)) && west update" ]
