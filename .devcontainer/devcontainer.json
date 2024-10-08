@@ -29,8 +29,17 @@
 	},
 	"features": {"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}},
 	"init": true,
-	"privileged": true,
-	"remoteEnv": { "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"},
 	"initializeCommand": "mkdir -p tools/tmp && nohup bash -c scripts/init.sh > tools/tmp/init.log",
-	"postStartCommand": "(test -d .west || (west init -l app && west update)) && west update"
+	"postAttachCommand": "init-devcontainer.sh",
+	"remoteEnv": { 
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+		"LOCAL_USER": "${localEnv:USER}",
+		"PRJ_ROOT_DIR": "/workspaces/PROJECT_REPO",
+		"TEST_DIR": "/workspaces/PROJECT_REPO/app_tests",
+		"APP_DIR": "/workspaces/PROJECT_REPO/app",
+		"ZEPHYR_BASE": "/workspaces/PROJECT_REPO/zephyr_project/zephyr",
+		"NET_TOOLS_BASE": "/workspaces/PROJECT_REPO/zephyr_project/tools/net-tools",
+		"APP_CODECHECKER_CONFIG_FILE": "/workspaces/PROJECT_REPO/app/codechecker.json"
+	},
+	"privileged": true
 }
