@@ -2,11 +2,7 @@ version: "3.9"
 
 services:
   app:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-      ssh:
-      - default
+    image: "ghcr.io/iworx-systems/zephyr-dev-container:main"
 
     volumes:
       # Forwards the local Docker socket to the container.
@@ -19,14 +15,7 @@ services:
     command: sleep infinity 
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:codechecker
-
-
-    # Uncomment the next four lines if you will use a ptrace-based debuggers like C++, Go, and Rust.
-    # cap_add:
-    #  - SYS_PTRACE
-    # security_opt:
-    #   - seccomp:unconfined
+    network_mode: "host"
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
     # (Adding the "ports" property to this file will not forward from a Codespace.)

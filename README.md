@@ -29,10 +29,8 @@ cd ~/GitHub
 git clone git@github.com:[YOUR_USERNAME/YOUR_REPO_NAME]
 code .
 ```
-It is **very important** that you change the "PRJ_ROOT_DIR" so the name of the folder is the same as the folder you cloned your project into. If you cloned with the command above the base folder is the same name as the repository and you would change the "PRJ_ROOT_DIR" in  ".devcontainer/Dockerfile" to:
-```Dockerfile
-ENV PRJ_ROOT_DIR /workspaces/[YOUR_REPO_NAME]
-``` 
+It is **very important** that you change the "PRJ_ROOT_DIR" and other related environment variables defined in [devcontainer.json](.devcontainer/devcontainer.json) to the folder you cloned your project into. If you cloned with the command above, the base folder is the same name as the repository and you should find and replace 'PROJECT_REPO' with the name of the repository.
+
 You should also update the project name in "app/CmakeLists.txt".
 ```cmake
 project(Zephyr-Dev-Container-Template)
