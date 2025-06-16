@@ -30,7 +30,6 @@
 	"features": {"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}},
 	"init": true,
 	"initializeCommand": "mkdir -p tools/tmp && nohup bash -c scripts/init.sh > tools/tmp/init.log",
-	"postAttachCommand": "init-devcontainer.sh",
 	"remoteEnv": { 
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
 		"LOCAL_USER": "${localEnv:USER}",
@@ -41,5 +40,6 @@
 		"NET_TOOLS_BASE": "/workspaces/PROJECT_REPO/zephyr_project/tools/net-tools",
 		"APP_CODECHECKER_CONFIG_FILE": "/workspaces/PROJECT_REPO/app/codechecker.json"
 	},
-	"privileged": true
+	"privileged": true,
+	"postAttachCommand": "init-devcontainer.sh"
 }
