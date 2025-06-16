@@ -55,7 +55,3 @@ The "app/sysbuild" folder contains some example configs/overlays for the app and
 
 # Static Code Analysis
 Static code analysis is completed at build and served at "http://localhost:8001" using CodeChecker. Once the dev container has finished launching the CodeChecker server will be accessible.
-
-# References
-  
-The Zephyr SDK installation portion of the Dockerfile is base on https://github.com/beriberikix/zephyr-docker
