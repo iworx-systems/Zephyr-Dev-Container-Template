@@ -1744,12 +1744,12 @@
               <enumeratedValues>
                  <enumeratedValue>
                     <name>0</name>
-                    <description>Brown-out Detector does not detect any voltage draft at VDD down through or up through the voltage of BODVL setting</description>
+                    <description>Brown-out Detector does not detect any voltage draft at AVDD down through or up through the voltage of BODVL setting</description>
                     <value>#0</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>When Brown-out Detector detects the VDD is dropped down through the voltage of BODVL setting or the VDD is raised up through the voltage of BODVL setting, this bit is set to 1 and the brown-out interrupt is requested if brown-out interrupt is enabled</description>
+                    <description>When Brown-out Detector detects the AVDD is dropped down through the voltage of BODVL setting or the AVDD is raised up through the voltage of BODVL setting, this bit is set to 1 and the brown-out interrupt is requested if brown-out interrupt is enabled</description>
                     <value>#1</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -4372,7 +4372,7 @@
                     <value>1</value>
                  </enumeratedValue>
               </enumeratedValues>
-              <access>read-write</access>
+              <access>write-only</access>
             </field>
           </fields>
        </register>
@@ -4413,12 +4413,12 @@
               <enumeratedValues>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>M460HD</description>
+                    <description>M46xxI/M46xxJ</description>
                     <value>0x02</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>M460LD</description>
+                    <description>M46xxG</description>
                     <value>0x03</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -4625,7 +4625,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>EQEI3_B</description>
+                    <description>QEI3_B</description>
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -4704,7 +4704,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>EQEI3_A</description>
+                    <description>QEI3_A</description>
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -4783,7 +4783,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>EQEI3_INDEX</description>
+                    <description>QEI3_INDEX</description>
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -4857,7 +4857,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>EQEI0_B</description>
+                    <description>QEI0_B</description>
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -4953,7 +4953,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>EQEI0_A</description>
+                    <description>QEI0_A</description>
                     <value>14</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -5027,7 +5027,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>EQEI0_INDEX</description>
+                    <description>QEI0_INDEX</description>
                     <value>14</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -5046,7 +5046,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_RXERR</description>
+                    <description>EMAC_RMII_RXERR</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5135,7 +5135,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_CRSDV</description>
+                    <description>EMAC_RMII_CRSDV</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5271,7 +5271,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>EQEI1_B</description>
+                    <description>QEI1_B</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5350,7 +5350,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>EQEI1_A</description>
+                    <description>QEI1_A</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5429,7 +5429,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>EQEI1_INDEX</description>
+                    <description>QEI1_INDEX</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5614,7 +5614,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>12</name>
-                    <description>EQEI1_INDEX</description>
+                    <description>QEI1_INDEX</description>
                     <value>12</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5693,7 +5693,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>12</name>
-                    <description>EQEI1_A</description>
+                    <description>QEI1_A</description>
                     <value>12</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5767,7 +5767,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>12</name>
-                    <description>EQEI1_B</description>
+                    <description>QEI1_B</description>
                     <value>12</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -5851,7 +5851,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI3_INDEX</description>
+                    <description>QEI3_INDEX</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6001,7 +6001,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>4</name>
-                    <description>EMAC0_RMII_RXERR</description>
+                    <description>EMAC_RMII_RXERR</description>
                     <value>04</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6090,7 +6090,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>4</name>
-                    <description>EMAC0_RMII_CRSDV</description>
+                    <description>EMAC_RMII_CRSDV</description>
                     <value>04</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6179,7 +6179,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>4</name>
-                    <description>EMAC0_RMII_RXD1</description>
+                    <description>EMAC_RMII_RXD1</description>
                     <value>04</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6280,7 +6280,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>4</name>
-                    <description>EMAC0_RMII_RXD0</description>
+                    <description>EMAC_RMII_RXD0</description>
                     <value>04</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6364,7 +6364,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>4</name>
-                    <description>EMAC0_RMII_REFCLK</description>
+                    <description>EMAC_RMII_REFCLK</description>
                     <value>04</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6443,7 +6443,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_PPS</description>
+                    <description>EMAC_PPS</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6497,6 +6497,11 @@
                     <value>15</value>
                  </enumeratedValue>
                  <enumeratedValue>
+                    <name>16</name>
+                    <description>SPI3_MOSI</description>
+                    <value>16</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
                     <name>18</name>
                     <description>KPI_COL5</description>
                     <value>18</value>
@@ -6527,7 +6532,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_TXEN</description>
+                    <description>EMAC_RMII_TXEN</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6581,6 +6586,11 @@
                     <value>15</value>
                  </enumeratedValue>
                  <enumeratedValue>
+                    <name>16</name>
+                    <description>SPI3_MISO</description>
+                    <value>16</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
                     <name>18</name>
                     <description>KPI_COL4</description>
                     <value>18</value>
@@ -6623,7 +6633,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_TXD1</description>
+                    <description>EMAC_RMII_TXD1</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6697,7 +6707,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_TXD0</description>
+                    <description>EMAC_RMII_TXD0</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6771,7 +6781,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_MDIO</description>
+                    <description>EMAC_RMII_MDIO</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6835,7 +6845,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_MDC</description>
+                    <description>EMAC_RMII_MDC</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -6975,6 +6985,11 @@
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
+                    <name>16</name>
+                    <description>SPI3_SS</description>
+                    <value>16</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
                     <name>17</name>
                     <description>PSIO0_CH3</description>
                     <value>17</value>
@@ -7057,6 +7072,11 @@
                     <name>14</name>
                     <description>CAN3_TXD</description>
                     <value>14</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>16</name>
+                    <description>SPI3_CLK</description>
+                    <value>16</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>17</name>
@@ -7865,7 +7885,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_RXD1</description>
+                    <description>EMAC_RMII_RXD1</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -7954,7 +7974,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_RXD0</description>
+                    <description>EMAC_RMII_RXD0</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8055,7 +8075,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_REFCLK</description>
+                    <description>EMAC_RMII_REFCLK</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8441,7 +8461,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>TRACE_SWO</description>
+                    <description>ITM_TRACE_SWO</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8539,7 +8559,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>12</name>
-                    <description>EQEI2_A</description>
+                    <description>QEI2_A</description>
                     <value>12</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8598,7 +8618,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>12</name>
-                    <description>EQEI2_INDEX</description>
+                    <description>QEI2_INDEX</description>
                     <value>12</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8652,7 +8672,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI3_B</description>
+                    <description>QEI3_B</description>
                     <value>13</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -8706,7 +8726,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI3_A</description>
+                    <description>QEI3_A</description>
                     <value>13</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -8796,7 +8816,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_nRESET</description>
+                    <description>HBI_D7</description>
                     <value>16</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8855,7 +8875,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D0</description>
+                    <description>HBI_D6</description>
                     <value>16</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -8909,7 +8929,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D1</description>
+                    <description>HBI_D5</description>
                     <value>16</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9043,7 +9063,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>EQEI0_B</description>
+                    <description>QEI0_B</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9097,7 +9117,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>EQEI0_A</description>
+                    <description>QEI0_A</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9168,7 +9188,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>EQEI0_INDEX</description>
+                    <description>QEI0_INDEX</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9257,7 +9277,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>12</name>
-                    <description>EQEI2_B</description>
+                    <description>QEI2_B</description>
                     <value>12</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9502,7 +9522,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>EQEI0_B</description>
+                    <description>QEI0_B</description>
                     <value>11</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9571,7 +9591,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>EQEI0_A</description>
+                    <description>QEI0_A</description>
                     <value>11</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9652,7 +9672,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>EQEI0_INDEX</description>
+                    <description>QEI0_INDEX</description>
                     <value>11</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9726,7 +9746,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>EQEI1_B</description>
+                    <description>QEI1_B</description>
                     <value>11</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9795,7 +9815,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>EQEI1_A</description>
+                    <description>QEI1_A</description>
                     <value>11</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9854,7 +9874,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>EQEI1_INDEX</description>
+                    <description>QEI1_INDEX</description>
                     <value>11</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9905,7 +9925,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_MDC</description>
+                    <description>EMAC_RMII_MDC</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9940,7 +9960,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI2_INDEX</description>
+                    <description>QEI2_INDEX</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -9969,7 +9989,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_MDIO</description>
+                    <description>EMAC_RMII_MDIO</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10004,7 +10024,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI2_A</description>
+                    <description>QEI2_A</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10033,7 +10053,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_TXD0</description>
+                    <description>EMAC_RMII_TXD0</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10068,7 +10088,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI2_B</description>
+                    <description>QEI2_B</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10097,7 +10117,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_TXD1</description>
+                    <description>EMAC_RMII_TXD1</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10173,7 +10193,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_RMII_TXEN</description>
+                    <description>EMAC_RMII_TXEN</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10227,7 +10247,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>EMAC0_PPS</description>
+                    <description>EMAC_PPS</description>
                     <value>03</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10267,7 +10287,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>TRACE_SWO</description>
+                    <description>ITM_TRACE_SWO</description>
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10689,7 +10709,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI2_B</description>
+                    <description>QEI2_B</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10753,7 +10773,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI2_A</description>
+                    <description>QEI2_A</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -10817,12 +10837,12 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>13</name>
-                    <description>EQEI2_INDEX</description>
+                    <description>QEI2_INDEX</description>
                     <value>13</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>14</name>
-                    <description>TRACE_SWO</description>
+                    <description>ITM_TRACE_SWO</description>
                     <value>14</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -12495,7 +12515,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_nCS</description>
+                    <description>HBI_CK</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -12524,7 +12544,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D3</description>
+                    <description>HBI_RWDS</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -12553,7 +12573,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D2</description>
+                    <description>HBI_D4</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13157,7 +13177,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_RWDS</description>
+                    <description>HBI_nRESET</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13196,7 +13216,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D7</description>
+                    <description>HBI_D3</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13247,7 +13267,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D6</description>
+                    <description>HBI_D2</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13286,7 +13306,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D5</description>
+                    <description>HBI_D1</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13320,7 +13340,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_D4</description>
+                    <description>HBI_D0</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13354,7 +13374,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>16</name>
-                    <description>HBI_CK</description>
+                    <description>HBI_nCS</description>
                     <value>16</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -13800,7 +13820,7 @@
           <fields>
             <field>
               <name>CURRENT</name>
-              <description>System Tick Current Value\nCurrent counter value. This is the value of the counter at the time it is sampled. The counter does not provide read-modify-write protection. The register is write-clear. A software write of any value will clear the register to 0.</description>
+              <description>System Tick Current Value\nCurrent counter value. This is the value of the counter at the time it is sampled. The counter does not provide read-modify-Write Protect. The register is write-clear. A software write of any value will clear the register to 0.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>24</bitWidth>
               <access>read-write</access>
@@ -15994,7 +16014,7 @@
             </field>
             <field>
               <name>HXTMD</name>
-              <description>HXT Bypass Mode (Write Protect)\nNote: This bit is write protected. Refer to the SYS_REGCTL register.</description>
+              <description>HXT Mode Selection (Write Protect)\nNote 1: This bit is write protected. Refer to the SYS_REGCTL register.\nNote 2: When external clock mode enable, HXTSELTYP(CLK_PWRCTL[12]) must be set as GM type.</description>
               <bitOffset>31</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -17442,12 +17462,12 @@
               <enumeratedValues>
                  <enumeratedValue>
                     <name>0</name>
-                    <description>EQEI3 clock Disabled</description>
+                    <description>QEI3 clock Disabled</description>
                     <value>#0</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>EQEI3 clock Enabled</description>
+                    <description>QEI3 clock Enabled</description>
                     <value>#1</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -19246,13 +19266,6 @@
               <name>VSENSEDIV</name>
               <description>Video Pixel Clock Divide Number from CCAP Sensor Clock Source</description>
               <bitOffset>8</bitOffset>
-              <bitWidth>8</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>EMAC0DIV</name>
-              <description>EMAC0 Clock Divide Number form HCLK</description>
-              <bitOffset>16</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
             </field>
@@ -23063,25 +23076,6 @@
               <access>read-only</access>
             </field>
             <field>
-              <name>MBS</name>
-              <description>Boot From Boot Loader Selection Flag (Read Only)\nThis bit is initiated with the MBS (CONFIG0[5]) after any reset is happened except CPU reset (CPU is 1) or system reset (SYS) is happened.</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>Boot from Boot Loader</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>Boot from LDROM/APROM.(.see CBS bit setting)</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              <access>read-only</access>
-            </field>
-            <field>
               <name>PGFF</name>
               <description>Flash Program with Fast Verification Flag (Read Only)\nThis bit is set if data is mismatched at ISP programming verification. This bit is clear by performing ISP Flash erase or ISP read CID operation </description>
               <bitOffset>5</bitOffset>
@@ -24877,25 +24871,6 @@
                  <enumeratedValue>
                     <name>1</name>
                     <description>Big-Endian</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>CKDIV</name>
-              <description>HyperBus Clock Divider</description>
-              <bitOffset>15</bitOffset>
-              <bitWidth>1</bitWidth>
-              <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>HyperBus Clock rate is HCLK/2</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>HyperBus Clock rate is HCLK/4</description>
                     <value>#1</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -77714,9 +77689,294 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>TOUTENn</name>
+              <name>TOUTEN0</name>
               <description>PDMA Time-out Enable Bits</description>
               <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN1</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN2</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN3</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN4</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN5</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN6</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN7</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN8</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN9</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN10</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN11</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN12</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN13</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN14</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN15</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
@@ -77745,9 +78005,294 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>TOUTIENn</name>
+              <name>TOUTIEN0</name>
               <description>PDMA Time-out Interrupt Enable Bits</description>
               <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN1</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN2</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN3</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN4</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN5</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN6</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN7</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN8</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN9</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN10</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN11</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN12</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN13</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN14</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN15</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
@@ -79277,46 +79822,6 @@
                     <name>109</name>
                     <description>Channel connects to SPI10_RX</description>
                     <value>109</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>110</name>
-                    <description>Channel connects to BMC0</description>
-                    <value>110</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>111</name>
-                    <description>Channel connects to BMC1</description>
-                    <value>111</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>112</name>
-                    <description>Channel connects to BMC2</description>
-                    <value>112</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>113</name>
-                    <description>Channel connects to BMC3</description>
-                    <value>113</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>114</name>
-                    <description>Channel connects to BMC4</description>
-                    <value>114</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>115</name>
-                    <description>Channel connects to BMC5</description>
-                    <value>115</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>116</name>
-                    <description>Channel connects to BMC6</description>
-                    <value>116</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>117</name>
-                    <description>Channel connects to BMC7</description>
-                    <value>117</value>
                  </enumeratedValue>
               </enumeratedValues>
               <access>read-write</access>
@@ -84673,9 +85178,294 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>TOUTENn</name>
+              <name>TOUTEN0</name>
               <description>PDMA Time-out Enable Bits</description>
               <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN1</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN2</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN3</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN4</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN5</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN6</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN7</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN8</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN9</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN10</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN11</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN12</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN13</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN14</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out function Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out function Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTEN15</name>
+              <description>PDMA Time-out Enable Bits</description>
+              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
@@ -84704,9 +85494,294 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>TOUTIENn</name>
+              <name>TOUTIEN0</name>
               <description>PDMA Time-out Interrupt Enable Bits</description>
               <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN1</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN2</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN3</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN4</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN5</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN6</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN7</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN8</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN9</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN10</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN11</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN12</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN13</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN14</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+              <enumeratedValues>
+                 <enumeratedValue>
+                    <name>0</name>
+                    <description>PDMA Channel n time-out interrupt Disabled</description>
+                    <value>#0</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>1</name>
+                    <description>PDMA Channel n time-out interrupt Enabled</description>
+                    <value>#1</value>
+                 </enumeratedValue>
+              </enumeratedValues>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TOUTIEN15</name>
+              <description>PDMA Time-out Interrupt Enable Bits</description>
+              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
@@ -86236,46 +87311,6 @@
                     <name>109</name>
                     <description>Channel connects to SPI10_RX</description>
                     <value>109</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>110</name>
-                    <description>Channel connects to BMC0</description>
-                    <value>110</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>111</name>
-                    <description>Channel connects to BMC1</description>
-                    <value>111</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>112</name>
-                    <description>Channel connects to BMC2</description>
-                    <value>112</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>113</name>
-                    <description>Channel connects to BMC3</description>
-                    <value>113</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>114</name>
-                    <description>Channel connects to BMC4</description>
-                    <value>114</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>115</name>
-                    <description>Channel connects to BMC5</description>
-                    <value>115</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>116</name>
-                    <description>Channel connects to BMC6</description>
-                    <value>116</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>117</name>
-                    <description>Channel connects to BMC7</description>
-                    <value>117</value>
                  </enumeratedValue>
               </enumeratedValues>
               <access>read-write</access>
@@ -89359,7 +90394,7 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>EXETEN</name>
+              <name>EXTETEN</name>
               <description>External Pin Event Trigger Enable Bit</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -92471,7 +93506,7 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>EXETEN</name>
+              <name>EXTETEN</name>
               <description>External Pin Event Trigger Enable Bit</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
@@ -128519,11 +129554,6 @@
               <bitWidth>3</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
-                    <name>0</name>
-                    <description>L0 mode</description>
-                    <value>#000</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
                     <name>1</name>
                     <description>L1 mode</description>
                     <value>#001</value>
@@ -131188,7 +132218,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP0 input is from signal CHA of EQEI controller unit n</description>
+                    <description>CAP0 input is from signal CHA of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -131217,7 +132247,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP1 input is from signal CHB of EQEI controller unit n</description>
+                    <description>CAP1 input is from signal CHB of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -131246,7 +132276,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP2 input is from signal CHX of EQEI controller unit n</description>
+                    <description>CAP2 input is from signal CHX of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -132064,7 +133094,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP0 input is from signal CHA of EQEI controller unit n</description>
+                    <description>CAP0 input is from signal CHA of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -132093,7 +133123,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP1 input is from signal CHB of EQEI controller unit n</description>
+                    <description>CAP1 input is from signal CHB of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -132122,7 +133152,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP2 input is from signal CHX of EQEI controller unit n</description>
+                    <description>CAP2 input is from signal CHX of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -132940,7 +133970,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP0 input is from signal CHA of EQEI controller unit n</description>
+                    <description>CAP0 input is from signal CHA of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -132969,7 +133999,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP1 input is from signal CHB of EQEI controller unit n</description>
+                    <description>CAP1 input is from signal CHB of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -132998,7 +134028,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP2 input is from signal CHX of EQEI controller unit n</description>
+                    <description>CAP2 input is from signal CHX of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -133816,7 +134846,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP0 input is from signal CHA of EQEI controller unit n</description>
+                    <description>CAP0 input is from signal CHA of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -133845,7 +134875,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP1 input is from signal CHB of EQEI controller unit n</description>
+                    <description>CAP1 input is from signal CHB of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -133874,7 +134904,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>CAP2 input is from signal CHX of EQEI controller unit n</description>
+                    <description>CAP2 input is from signal CHX of QEI controller unit n</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
@@ -163984,8 +165014,13 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>4</name>
-                    <description>The frequency of the CSR clock is 150-250 MHz and the MDC clock is CSR clock/102.\nThe frequency of the CSR clock is 250-300 MHz and the MDC clock is CSR clock/124</description>
+                    <description>The frequency of the CSR clock is 150-250 MHz and the MDC clock is CSR clock/102</description>
                     <value>#0100</value>
+                 </enumeratedValue>
+                 <enumeratedValue>
+                    <name>5</name>
+                    <description>The frequency of the CSR clock is 250-300 MHz and the MDC clock is CSR clock/124</description>
+                    <value>#0101</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>8</name>
@@ -165569,7 +166604,7 @@
             </field>
             <field>
               <name>PBL</name>
-              <description>Programmable Burst Length\nThese bits indicate the maximum number of beats to be transferred in one DMA transaction. This is the maximum value that is used in a single block Read or Write. The DMA always attempts to burst as specified in PBL each time it starts a Burst transfer on the host bus. PBL can be programmed with permissible values of 1, 2, 4, 8, 16, and 32. Any other value results in undefined behavior. When USP is set high, this PBL value is applicable only for Tx DMA transactions. If the number of beats to be transferred is more than 32, then perform the following steps: \n1. Set the PBLx8 mode. \n2. Set the PBL. \nFor example, if the maximum number of beats to be transferred is 64, then first set PBLx8 to 1 and then set PBL to 8. The PBL values have the following limitation: The maximum number of possible beats (PBL) is limited by the size of the Tx FIFO and Rx FIFO in the MTL layer and the data bus width on the DMA. The FIFO has a constraint that the maximum beat supported is half the depth of the FIFO, except when specified.\nFor different data bus widths and FIFO sizes, the valid PBL range (including x8 mode) is provided in the following list. If the PBL is common for both transmit and receive DMA, the minimum Rx FIFO and Tx FIFO depths must be considered. \nNote: In the half-duplex mode, the valid PBL range specified in the following list is applicable only for Tx FIFO.\n* 32-Bit Data Bus Width \n128 Bytes FIFO Depth: In the full-duplex mode, the valid PBL range is 16 or less. In the half-duplex mode, the valid PBL range is 8 or less for the 10 or 100 Mbps mode. \n256 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 32 or less. \n512 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 64 or less. \n1 KB FIFO Depth: In the full-duplex mode, the valid PBL range is 128 or less. In the half-duplex mode, the valid PBL range is 128 or less in the 10 or 100 Mbps mode and 64 or less in the 1000 Mbps mode. \n2 KB and Higher FIFO Depth: All PBL values are supported in the full-duplex mode and half-duplex modes. \n* 64-Bit Data Bus Width \n128 Bytes FIFO Depth: In the full-duplex mode, the valid PBL range is 8 or less. In the half-duplex mode, the valid PBL range is 4 or less for the 10 or 100 Mbps mode. \n256 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 16 or less. \n512 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 32 or less. \n1 KB FIFO Depth: In the full-duplex mode, the valid PBL range is 64 or less. In the half-duplex mode, the valid PBL range is 64 or less in the 10 or 100 Mbps mode and 32 or less in the 1000-Mbps mode. \n2 KB FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 128 or less. \n4 KB and Higher FIFO Depth: All PBL values are supported in the full-duplex and half-duplex modes. \n* 128-Bit Data Bus Width \n128 Bytes FIFO Depth: In the full-duplex mode, the valid PBL range is 4 or less. In the half-duplex mode, the valid PBL range is 2 or less for the 10 or 100 Mbps mode. \n256 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 8 or less. \n512 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 16 or less. \n1 KB FIFO Depth: In the full-duplex mode, the valid PBL range is 32 or less. In the half-duplex mode, the valid PBL range is 32 or less in the 10 or 100 Mbps mode and 16 or less in the 1000-Mbps mode. \n2 KB FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 64 or less. \n4 KB FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 128 or less. \n8 KB and Higher FIFO Depth: All PBL values are supported in the full-duplex and half-duplex modes.</description>
+              <description>Programmable Burst Length\nThese bits indicate the maximum number of beats to be transferred in one DMA transaction. This is the maximum value that is used in a single block Read or Write. The DMA always attempts to burst as specified in PBL each time it starts a Burst transfer on the host bus. PBL can be programmed with permissible values of 1, 2, 4, 8, 16, and 32. Any other value results in undefined behavior. When USP is set high, this PBL value is applicable only for Tx DMA transactions. If the number of beats to be transferred is more than 32, then perform the following steps: \n1. Set the PBLx8 mode. \n2. Set the PBL. \nFor example, if the maximum number of beats to be transferred is 64, then first set PBLx8 to 1 and then set PBL to 8. The PBL values have the following limitation: The maximum number of possible beats (PBL) is limited by the size of the Tx FIFO and Rx FIFO in the MTL layer and the data bus width on the DMA. The FIFO has a constraint that the maximum beat supported is half the depth of the FIFO, except when specified.\nFor different data bus widths and FIFO sizes, the valid PBL range (including x8 mode) is provided in the following list. If the PBL is common for both transmit and receive DMA, the minimum Rx FIFO and Tx FIFO depths must be considered. \nNote: In the half-duplex mode, the valid PBL range specified in the following list is applicable only for Tx FIFO.\n* 32-Bit Data Bus Width \n128 Bytes FIFO Depth: In the full-duplex mode, the valid PBL range is 16 or less. In the half-duplex mode, the valid PBL range is 8 or less for the 10 or 100 Mbps mode. \n256 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 32 or less. \n512 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 64 or less. \n1 Kbytes FIFO Depth: In the full-duplex mode, the valid PBL range is 128 or less. In the half-duplex mode, the valid PBL range is 128 or less in the 10 or 100 Mbps mode and 64 or less in the 1000 Mbps mode. \n2 Kbytes and Higher FIFO Depth: All PBL values are supported in the full-duplex mode and half-duplex modes. \n* 64-Bit Data Bus Width \n128 Bytes FIFO Depth: In the full-duplex mode, the valid PBL range is 8 or less. In the half-duplex mode, the valid PBL range is 4 or less for the 10 or 100 Mbps mode. \n256 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 16 or less. \n512 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 32 or less. \n1 Kbytes FIFO Depth: In the full-duplex mode, the valid PBL range is 64 or less. In the half-duplex mode, the valid PBL range is 64 or less in the 10 or 100 Mbps mode and 32 or less in the 1000-Mbps mode. \n2 Kbytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 128 or less. \n4 Kbytes and Higher FIFO Depth: All PBL values are supported in the full-duplex and half-duplex modes. \n* 128-Bit Data Bus Width \n128 Bytes FIFO Depth: In the full-duplex mode, the valid PBL range is 4 or less. In the half-duplex mode, the valid PBL range is 2 or less for the 10 or 100 Mbps mode. \n256 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 8 or less. \n512 Bytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 16 or less. \n1 Kbytes FIFO Depth: In the full-duplex mode, the valid PBL range is 32 or less. In the half-duplex mode, the valid PBL range is 32 or less in the 10 or 100 Mbps mode and 16 or less in the 1000-Mbps mode. \n2 Kbytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 64 or less. \n4 Kbytes FIFO Depth: In the full-duplex mode and the half-duplex (10 or 100 Mbps) modes, the valid PBL range is 128 or less. \n8 Kbytes and Higher FIFO Depth: All PBL values are supported in the full-duplex and half-duplex modes.</description>
               <bitOffset>8</bitOffset>
               <bitWidth>6</bitWidth>
               <access>read-write</access>
@@ -165947,35 +166982,35 @@
             </field>
             <field>
               <name>EFC</name>
-              <description>Enable HW Flow Control\nWhen this bit is set, the flow control signal operation based on the fill-level of Rx FIFO is enabled. When reset, the flow control operation is disabled. This bit is not used (reserved and always reset) when the Rx FIFO is less than 4 KB.</description>
+              <description>Enable HW Flow Control\nWhen this bit is set, the flow control signal operation based on the fill-level of Rx FIFO is enabled. When reset, the flow control operation is disabled. This bit is not used (reserved and always reset) when the Rx FIFO is less than 4 Kbytes.</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>RFA</name>
-              <description>Threshold for Activating Flow Control\nThese bits control the threshold (Fill level of Rx FIFO) at which the flow control is activated.\nThese values are applicable only to Rx FIFOs of 4 KB or more and when Bit 8 (EFC) is set high. If the Rx FIFO is 8 KB or more, an additional Bit (RFA_2) is used for more threshold levels as described in Bit 23. These bits are reserved and read-only when the depth of Rx FIFO is less than 4 KB.\nNote: When FIFO size is exactly 4 KB, although the EMAC allows you to program the value of these bits to 11, the software should not program these bits to 2'b11. The value 2'b11 means flow control on FIFO empty condition.</description>
+              <description>Threshold for Activating Flow Control\nThese bits control the threshold (Fill level of Rx FIFO) at which the flow control is activated.\nThese values are applicable only to Rx FIFOs of 4 Kbytes or more and when Bit 8 (EFC) is set high. If the Rx FIFO is 8 Kbytes or more, an additional Bit (RFA_2) is used for more threshold levels as described in Bit 23. These bits are reserved and read-only when the depth of Rx FIFO is less than 4 Kbytes.\nNote: When FIFO size is exactly 4 Kbytes, although the EMAC allows you to program the value of these bits to 11, the software should not program these bits to 2'b11. The value 2'b11 means flow control on FIFO empty condition.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
                     <name>0</name>
-                    <description>Full minus 1 KB, that is, FULL - 1KB</description>
+                    <description>Full minus 1 Kbytes, that is, FULL - 1 Kbytes</description>
                     <value>#00</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>Full minus 2 KB, that is, FULL - 2KB</description>
+                    <description>Full minus 2 Kbytes, that is, FULL - 2 Kbytes</description>
                     <value>#01</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>Full minus 3 KB, that is, FULL - 3KB</description>
+                    <description>Full minus 3 Kbytes, that is, FULL - 3 Kbytes</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>Full minus 4 KB, that is, FULL - 4KB</description>
+                    <description>Full minus 4 Kbytes, that is, FULL - 4 Kbytes</description>
                     <value>#11</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -165983,28 +167018,28 @@
             </field>
             <field>
               <name>RFD</name>
-              <description>Threshold for Deactivating Flow Control\nThese bits control the threshold (Fill-level of Rx FIFO) at which the flow control is de-asserted after activation. \nThe de-assertion is effective only after flow control is asserted. If the Rx FIFO is 8 KB or more, an additional bit (RFD_2) is used for more threshold levels as described in Bit 22. These bits are reserved and read-only when the Rx FIFO depth is less than 4 KB. \nNote: For proper flow control, the value programmed in the RFD_2, RFD fields should be equal to or more than the value programmed in the RFA_2, RFA fields.</description>
+              <description>Threshold for Deactivating Flow Control\nThese bits control the threshold (Fill-level of Rx FIFO) at which the flow control is de-asserted after activation. \nThe de-assertion is effective only after flow control is asserted. If the Rx FIFO is 8 Kbytes or more, an additional bit (RFD_2) is used for more threshold levels as described in Bit 22. These bits are reserved and read-only when the Rx FIFO depth is less than 4 Kbytes. \nNote: For proper flow control, the value programmed in the RFD_2, RFD fields should be equal to or more than the value programmed in the RFA_2, RFA fields.</description>
               <bitOffset>11</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
                  <enumeratedValue>
                     <name>0</name>
-                    <description>Full minus 1 KB, that is, FULL - 1 Kbytes</description>
+                    <description>Full minus 1 Kbytes, that is, FULL - 1 Kbytes</description>
                     <value>#00</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>Full minus 2 KB, that is, FULL - 2KB</description>
+                    <description>Full minus 2 Kbytes, that is, FULL - 2 Kbytes</description>
                     <value>#01</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>2</name>
-                    <description>Full minus 3 KB, that is, FULL - 3KB</description>
+                    <description>Full minus 3 Kbytes, that is, FULL - 3 Kbytes</description>
                     <value>#10</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>3</name>
-                    <description>Full minus 4 KB, that is, FULL - 4KB</description>
+                    <description>Full minus 4 Kbytes, that is, FULL - 4 Kbytes</description>
                     <value>#11</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -183442,7 +184477,7 @@
             </field>
             <field>
               <name>AUTOSS</name>
-              <description>Automatic Slave Selection Function Enable BitThis bit is supported in Master mode only.</description>
+              <description>Automatic Slave Selection Function Enable BitThis bit is supported in Master mode only</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -184753,7 +185788,7 @@
             </field>
             <field>
               <name>AUTOSS</name>
-              <description>Automatic Slave Selection Function Enable BitThis bit is supported in Master mode only.</description>
+              <description>Automatic Slave Selection Function Enable BitThis bit is supported in Master mode only</description>
               <bitOffset>3</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -185909,7 +186944,7 @@
             </field>
             <field>
               <name>OPMODE</name>
-              <description>SPI Function Operation Mode\nNote 1: After using Normal I/O mode of SPI Flash controller to program the content of external SPI Flash, please set CDINVAL(SPIM_CTL1[3]) to 0x1 (Set all cache data to be invalid).\nNote 2: In DMA write mode, hardware will send just one page program command per operation. Users must take care of cross-page cases. After using DMA write mode of SPI Flash controller to program the content of external SPI Flash, please set CDINVAL(SPIM_CTL1[3]) to 0x1 (Set all cache data to be invalid).\nNote 3: For external SPI Flash with 32 MB, access address range of external SPI Flash address is from 0x00000000 to 0x01FFFFFF when using Normal I/O mode, DMA write mode, and DMA read mode to write/read external SPI Flash data. Please user check size of used SPI Flash component to know access address range of external SPI Flash.\nNote 4: For external SPI Flash with 32 MB, access address range of external SPI Flash address is from 0x08000000 to 0x09FFFFFF when using Direct Memory mapping mode (DMM mode) to read external SPI Flash data. Please user check size of used SPI Flash component to know access address range of external SPI Flash.</description>
+              <description>SPI Function Operation Mode\nNote 1: After using Normal I/O mode of SPI Flash controller to program the content of external SPI Flash, please set CDINVAL(SPIM_CTL1[3]) to 0x1 (Set all cache data to be invalid).\nNote 2: In DMA write mode, hardware will send just one page program command per operation. Users must take care of cross-page cases. After using DMA write mode of SPI Flash controller to program the content of external SPI Flash, please set CDINVAL(SPIM_CTL1[3]) to 0x1 (Set all cache data to be invalid).\nNote 3: For external SPI Flash with 32 Mbytes, access address range of external SPI Flash address is from 0x00000000 to 0x01FFFFFF when using Normal I/O mode, DMA write mode, and DMA read mode to write/read external SPI Flash data. Please user check size of used SPI Flash component to know access address range of external SPI Flash.\nNote 4: For external SPI Flash with 32 Mbytes, access address range of external SPI Flash address is from 0x08000000 to 0x09FFFFFF when using Direct Memory mapping mode (DMM mode) to read external SPI Flash data. Please user check size of used SPI Flash component to know access address range of external SPI Flash.</description>
               <bitOffset>22</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
@@ -186309,7 +187344,7 @@
           <fields>
             <field>
               <name>ADDR</name>
-              <description>SPI Flash Address Register\nFor DMA Read mode, this is the source address for DMA transfer.\nFor DMA Write mode, this is the destination address for DMA transfer.\nNote 1: This address must be word-aligned.\nNote 2: For external SPI Flash with 32 MB, the value of this SPI Flash address register 'ADDR' is from 0x00000000 to 0x00FFFFFF when using DMA write mode and DMA read mode to write/read external SPI Flash data. Please user check size of used SPI Flash component to know access address range of external SPI Flash.</description>
+              <description>SPI Flash Address Register\nFor DMA Read mode, this is the source address for DMA transfer.\nFor DMA Write mode, this is the destination address for DMA transfer.\nNote 1: This address must be word-aligned.\nNote 2: For external SPI Flash with 32 Mbytes, the value of this SPI Flash address register 'ADDR' is from 0x00000000 to 0x00FFFFFF when using DMA write mode and DMA read mode to write/read external SPI Flash data. Please user check size of used SPI Flash component to know access address range of external SPI Flash.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -201011,7 +202046,7 @@
           <fields>
             <field>
               <name>STBUFSEG</name>
-              <description>SETUP Token Buffer Segmentation\nIt is used to indicate the offset address for the SETUP token with the USB Device SRAM starting address. The effective starting address is\nUSBD_SRAM address + {STBUFSEG, 3'b000} \nNote: It is used for SETUP token only.</description>
+              <description>SETUP Token Buffer Segmentation\nIt is used to indicate the offset address for the SETUP token with the USB Device SRAM starting address. The effective starting address is\nUSBD_SRAM address + {STBUFSE.G. 3'b000} \nNote: It is used for SETUP token only.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -202328,7 +203363,7 @@
           <fields>
             <field>
               <name>BUFSEG</name>
-              <description>Endpoint Buffer Segmentation\nIt is used to indicate the offset address for each endpoint with the USB SRAM starting address The effective starting address of the endpoint is\nUSBD_SRAM address + {BUFSEG, 3'b000}\nRefer to the section 6.33.5.7 for the endpoint SRAM structure and its description.</description>
+              <description>Endpoint Buffer Segmentation\nIt is used to indicate the offset address for each endpoint with the USB SRAM starting address The effective starting address of the endpoint is\nUSBD_SRAM address + {BUFSE.G. 3'b000}\nRefer to the section 6.33.5.7 for the endpoint SRAM structure and its description.</description>
               <bitOffset>3</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
@@ -204937,22 +205972,22 @@
               <enumeratedValues>
                  <enumeratedValue>
                     <name>0</name>
-                    <description>Host to dev.ice\nStand.ard\nDev.ice</description>
+                    <description>Host to dev..ice\nStand..ard\nDev..ice</description>
                     <value>0</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>Device to h.ost\nCl.ass\nInterf.ace</description>
+                    <description>Device to h..ost\nCl..ass\nInterf..ace</description>
                     <value>1</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>10</name>
-                    <description>Ven.dor\nEndpo.int</description>
+                    <description>Ven..dor\nEndpo..int</description>
                     <value>10</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>11</name>
-                    <description>Reser.ved\nOt.her</description>
+                    <description>Reser..ved\nOt..her</description>
                     <value>11</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -206982,12 +208017,12 @@
               <enumeratedValues>
                  <enumeratedValue>
                     <name>0</name>
-                    <description>Reser.ved</description>
+                    <description>Reser..ved</description>
                     <value>0000</value>
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>L1 (Sle.ep)</description>
+                    <description>L1 (Sle..ep)</description>
                     <value>0001</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -208155,7 +209190,7 @@
           <fields>
             <field>
               <name>SUSPEND</name>
-              <description>Suspend Assertion\nThis bit controls the suspend mode of USB PHY 0.\nWhile PHY was suspended, all circuits of PHY were powered down and outputs are tri-state.\nThis bit is 1'b0 in default. This means the USB PHY 0 is suspended in default. It is necessary to set this bit 1'b1 to make USB PHY 0 leave suspend mode before doing configuration of USB host.</description>
+              <description>Suspend Assertion\nThis bit controls the suspend mode of USB PHY 0.\nWhile PHY was suspended, all circuits of PHY were powered down and outputs are tri-state.\nThis bit is 1'b0 by default. This means the USB PHY 0 is suspended by default. It is necessary to set this bit 1'b1 to make USB PHY 0 leave suspend mode before doing configuration of USB host.</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -208243,7 +209278,7 @@
           <fields>
             <field>
               <name>SUSPEND</name>
-              <description>Suspend Assertion\nThis bit controls the suspend mode of USB PHY 1.\nWhile PHY was suspended, all circuits of PHY were powered down and outputs are tri-state.\nThis bit is 1'b0 in default. This means the USB PHY 0 is suspended in default. It is necessary to set this bit 1'b1 to make USB PHY 0 leave suspend mode before doing configuration of USB host.</description>
+              <description>Suspend Assertion\nThis bit controls the suspend mode of USB PHY 1.\nWhile PHY was suspended, all circuits of PHY were powered down and outputs are tri-state.\nThis bit is 1'b0 by default. This means the USB PHY 0 is suspended by default. It is necessary to set this bit 1'b1 to make USB PHY 0 leave suspend mode before doing configuration of USB host.</description>
               <bitOffset>8</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -210971,7 +212006,7 @@
           <fields>
             <field>
               <name>ROLECHGIEN</name>
-              <description>Role Changed Interrupt Enable Bit\nNote: Role is Host or Peripheral.</description>
+              <description>Role Changed Interrupt Enable Bit\nNote: The role can be Host or Peripheral.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -211500,7 +212535,7 @@
                  </enumeratedValue>
                  <enumeratedValue>
                     <name>1</name>
-                    <description>OTG A-device cannot drives VBUS high in this interval</description>
+                    <description>OTG A-device cannot drive VBUS high in this interval</description>
                     <value>#1</value>
                  </enumeratedValue>
               </enumeratedValues>
@@ -212965,7 +214000,7 @@
             </field>
             <field>
               <name>MRAF</name>
-              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
+              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n&#8226; Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n&#8226; Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -215026,7 +216061,7 @@
           <fields>
             <field>
               <name>TRPn</name>
-              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n after successful transmission together with the corresponding CANFD_TXBTO bit\n when the transmission has not yet been started at the point of cancellation\n when the transmission has been aborted due to lost arbitration\n when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
+              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n&#8226; after successful transmission together with the corresponding CANFD_TXBTO bit\n&#8226; when the transmission has not yet been started at the point of cancellation\n&#8226; when the transmission has been aborted due to lost arbitration\n&#8226; when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <enumeratedValues>
@@ -216692,7 +217727,7 @@
             </field>
             <field>
               <name>MRAF</name>
-              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
+              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n&#8226; Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n&#8226; Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -218753,7 +219788,7 @@
           <fields>
             <field>
               <name>TRPn</name>
-              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n after successful transmission together with the corresponding CANFD_TXBTO bit\n when the transmission has not yet been started at the point of cancellation\n when the transmission has been aborted due to lost arbitration\n when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
+              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n&#8226; after successful transmission together with the corresponding CANFD_TXBTO bit\n&#8226; when the transmission has not yet been started at the point of cancellation\n&#8226; when the transmission has been aborted due to lost arbitration\n&#8226; when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <enumeratedValues>
@@ -220419,7 +221454,7 @@
             </field>
             <field>
               <name>MRAF</name>
-              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
+              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n&#8226; Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n&#8226; Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -222480,7 +223515,7 @@
           <fields>
             <field>
               <name>TRPn</name>
-              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n after successful transmission together with the corresponding CANFD_TXBTO bit\n when the transmission has not yet been started at the point of cancellation\n when the transmission has been aborted due to lost arbitration\n when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
+              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n&#8226; after successful transmission together with the corresponding CANFD_TXBTO bit\n&#8226; when the transmission has not yet been started at the point of cancellation\n&#8226; when the transmission has been aborted due to lost arbitration\n&#8226; when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <enumeratedValues>
@@ -224146,7 +225181,7 @@
             </field>
             <field>
               <name>MRAF</name>
-              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
+              <description>Message RAM Access Failure\nThe ag is set, when the Rx Handler\n&#8226; Has not completed acceptance ltering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance ltering or message storage is aborted and the Rx Handler starts processing of the following message.\n&#8226; Was not able to write a message to the Message RAM. In this case message storage is aborted.\nIn both cases the FIFO put index is not updated resp. the New Data ag for a dedicated Rx Buffer is not set, a partly stored message is overwritten when the next message is stored to this location.\nThe flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the CAN FD controller is switched into Restricted Operation Mode (refer to Restricted Operation Mode). To leave Restricted Operation Mode, the Host CPU has to reset ASM (CANFD_CCCR[2]).</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -226207,7 +227242,7 @@
           <fields>
             <field>
               <name>TRPn</name>
-              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n after successful transmission together with the corresponding CANFD_TXBTO bit\n when the transmission has not yet been started at the point of cancellation\n when the transmission has been aborted due to lost arbitration\n when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
+              <description>Transmission Request PendingEach Tx Buffer has its own Transmission Request Pending bit The bits are set via register CANFD_TXBAR The bits are reset after a requested transmission has completed or has been cancelled via register CANFD_TXBCR\nCANFD_TXBRP bits are set only for those Tx Buffers congured via CANFD_TXBC. After a CANFD_TXBRP bit has been set, a Tx scan (refer to 6.38.5.5, Tx Handling) is started to check for the pending Tx request with the highest priority (Tx Buffer with lowest Message ID).\nA cancellation request resets the corresponding transmission request pending bit of register CANFD_TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding CANFD_TXBRP bit has been reset.\nAfter a cancellation has been requested, a finished cancellation is signaled via CANFD_TXBCF\n&#8226; after successful transmission together with the corresponding CANFD_TXBTO bit\n&#8226; when the transmission has not yet been started at the point of cancellation\n&#8226; when the transmission has been aborted due to lost arbitration\n&#8226; when an error occurred during frame transmission\nIn DAR mode all transmissions are automatically cancelled if they are not successful. The corresponding CANFD_TXBCF bit is set for all unsuccessful transmissions.\nNote: CANFD_TXBRP bits which are set while a Tx scan is in progress are not considered during this particular Tx scan. In case a cancellation is requested for such a Tx Buffer, this Add Request is cancelled immediately, the corresponding CANFD_TXBRP bit is reset.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <enumeratedValues>
@@ -242578,7 +243613,7 @@
           <fields>
             <field>
               <name>ACMPEN</name>
-              <description>Comparator Enable Bit</description>
+              <description>Comparator Enable Bit\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -242900,7 +243935,7 @@
             </field>
             <field>
               <name>MODESEL</name>
-              <description>Comparator Power Mode Selection</description>
+              <description>Comparator Power Mode Selection\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
@@ -242941,7 +243976,7 @@
           <fields>
             <field>
               <name>ACMPEN</name>
-              <description>Comparator Enable Bit</description>
+              <description>Comparator Enable Bit\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -243263,7 +244298,7 @@
             </field>
             <field>
               <name>MODESEL</name>
-              <description>Comparator Power Mode Selection</description>
+              <description>Comparator Power Mode Selection\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
@@ -243650,7 +244685,7 @@
           <fields>
             <field>
               <name>ACMPEN</name>
-              <description>Comparator Enable Bit</description>
+              <description>Comparator Enable Bit\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -243987,7 +245022,7 @@
             </field>
             <field>
               <name>MODESEL</name>
-              <description>Comparator Power Mode Selection</description>
+              <description>Comparator Power Mode Selection\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
@@ -244028,7 +245063,7 @@
           <fields>
             <field>
               <name>ACMPEN</name>
-              <description>Comparator Enable Bit</description>
+              <description>Comparator Enable Bit\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <enumeratedValues>
@@ -244365,7 +245400,7 @@
             </field>
             <field>
               <name>MODESEL</name>
-              <description>Comparator Power Mode Selection</description>
+              <description>Comparator Power Mode Selection\nNote: There is a setup time TSetup after comparator is enabled or MODESEL is changed. User should wait this TSetup to make comparator working normally, or user may get unstable comparator output value.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>2</bitWidth>
               <enumeratedValues>
