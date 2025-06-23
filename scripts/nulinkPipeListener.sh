@@ -9,13 +9,18 @@
 
 . scripts/pipe_vars.sh
 
-# Create empty binary file
+# Create empty file if nothing exists
 touch "/mnt/c/Users/Public/Documents/zephyr.bin"
 
+# Change path to windows drive so cmd.exe doesn't complain
+# about UNC paths not being supported.
+cd /mnt/c
+
 # Run command through named pipe (WSL redirects to windows execution env for executables)
-while [ true ] 
+while [ true ]
 do
-    cmd="$(cat $PIPE_DIR/"${PIPES[$NULINK]}")"
+    # Have to use absolute path since we are in /mnt/c now
+    cmd="$(cat $SCRIPT_DIR/../$PIPE_DIR/"${PIPES[$NULINK]}")"
     if [ -z "$cmd" ]; then
         # Display help message
         "$LINUX_NULINK_PATH/$NULINK_EXE"
