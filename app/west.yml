@@ -17,7 +17,7 @@ manifest:
     # Zephyr
     - name: zephyr
       remote: iworx_public
-      revision: main
+      revision: development
       import:
         path-prefix: zephyr_project
         name-allowlist:
@@ -26,6 +26,7 @@ manifest:
           - segger
           - tinycrypt
           - mcuboot
+          - nanopb
 
     # Cmock/Unity module
     - name: test
@@ -37,14 +38,31 @@ manifest:
     # Boards
     - name: iworx-zephyr-boards
       remote: iworx_private
+      path: iworx/boards
       repo-path: iworx-zephyr-boards.git
       revision: main
 
     # Drivers
     - name: iworx-zephyr-drivers
+      path: iworx/drivers
       remote: iworx_private
       repo-path: iworx-zephyr-drivers.git
+      revision: development
+
+    # Acquisition
+    - name: iworx-modules
+      path: iworx/modules
+      remote: iworx_systems_private
+      repo-path: iworx-zephyr-modules.git
+      revision: development
+
+    # Protocol Buffers
+    - name: iworx-proto
+      path: iworx/protocol_buffers
+      remote: iworx_systems_private
+      repo-path: iworx-proto.git
       revision: main
+    
 
   self:
     path: Zephyr-Dev-Container-Template
