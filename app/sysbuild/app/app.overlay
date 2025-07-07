@@ -1,0 +1,150 @@
+// The following is an example of an acquisiton map which determines how devices
+// map to the iworx acquisition subsystem. Use it as a reference to start writting
+// the acquisition map for your specific application.
+// / {
+//     acquisition_mapping: acquisition-mapping {
+//         compatible = "iworx,acq-map";
+//         status = "okay";
+
+//         device-name = "TURBINE_SPIROMETER";
+
+//         endpoints: endpoints {
+//             acq_ep_usb: acq-ep-usb {
+//                 compatible = "iworx,acq-ep-usb";
+//                 status = "disabled";
+
+//                 phy = "USB";
+//             };
+//             acq_ep_shell: acq-ep-shell {
+//                 compatible = "iworx,acq-ep-uart";
+//                 status = "okay";
+
+//                 phy = "UART";
+//                 bus = <&uart1>;
+//             };
+//             acq_ep_usb_uart: acq-ep-usb-uart {
+//                 compatible = "iworx,acq-ep-uart";
+//                 status = "okay";
+
+//                 phy = "UART";
+//                 bus = <&cdc_acm_uart>;
+//             };
+//         };
+        
+//         channel_sources: channel_sources {
+//             accelerometer: accelerometer {
+//                 compatible = "iworx,acq-ch-src-sensor";
+//                 status = "okay";
+
+//                 sensor = <&accelerometer0>;
+                
+//                 accel_ch {
+//                     compatible = "iworx,acq-ch-compound";
+//                     status = "okay";
+
+//                     ch-unit = "ACCEL_XYZ";
+//                     max-sample-rate-hz = <1000>;
+
+//                     accel_ch_x: accel-ch-x{
+//                         compatible = "iworx,acq-ch";
+//                         ch-unit = "ACCEL_X";
+//                     };
+
+//                     accel_ch_y: accel-ch-y{
+//                         compatible = "iworx,acq-ch";
+//                         ch-unit = "ACCEL_Y";
+//                     };
+
+//                     accel_ch_z: accel-ch-z{
+//                         compatible = "iworx,acq-ch";
+//                         ch-unit = "ACCEL_Z";
+//                     };
+//                 };
+//             };
+
+//             comet_co2: comet-co2 {
+//                 compatible = "iworx,acq-ch-src-sensor";
+//                 status = "okay";
+
+//                 sensor = <&comet_co2_sensor>;
+
+//                 co2_ch {
+//                     compatible = "iworx,acq-ch";
+//                     status = "okay";
+
+//                     ch-unit = "CO2";
+//                     max-sample-rate-hz = <1000>;
+//                 };
+                
+//                 // o2_ch {
+//                 //     compatible = "iworx,acq-ch";
+//                 //     status = "okay";
+                    
+//                 //     ch-unit = "O2";
+//                 //     max-sample-rate-hz = <1000>;
+//                 // };
+//             };
+
+//             pht: pht {
+//                 compatible = "iworx,acq-ch-src-sensor";
+//                 status = "okay";
+
+//                 sensor = <&pht_sensor>;
+
+//                 pressure_ch {
+//                     compatible = "iworx,acq-ch";
+//                     status = "okay";
+
+//                     ch-unit = "PRESS";
+//                     max-sample-rate-hz = <1000>;
+//                 };
+                
+//                 humidity_ch {
+//                     compatible = "iworx,acq-ch";
+//                     status = "okay";
+
+//                     ch-unit = "HUMIDITY";
+//                     max-sample-rate-hz = <200>;
+//                 };
+
+//                 temperature_ch {
+//                     compatible = "iworx,acq-ch";
+//                     status = "okay";
+
+//                     ch-unit = "AMBIENT_TEMP";
+//                     max-sample-rate-hz = <1000>;
+//                 };
+//             };
+
+//             turbine: turbine {
+//                 compatible = "iworx,acq-ch-src-sensor";
+//                 status = "okay";
+
+//                 sensor = <&qdec0>;
+                
+//                 turbine_ch {
+//                     compatible = "iworx,acq-ch";
+//                     status = "okay";
+
+//                     ch-unit = "POS_DZ";
+//                     max-sample-rate-hz = <2000>;
+//                 };
+//             };
+
+//             battery_monitor: battery-monitor {
+//                 compatible = "iworx,acq-ch-src-sensor";
+//                 status = "okay";
+
+//                 sensor = <&qdec0>;
+                
+//                 battery_soc_ch {
+//                     compatible = "iworx,acq-ch";
+//                     status = "okay";
+                    
+//                     ch-unit = "GAUGE_STATE_OF_CHARGE";
+//                     max-sample-rate-hz = <10>;
+//                 };
+//             };
+//         };
+//     };
+// };
