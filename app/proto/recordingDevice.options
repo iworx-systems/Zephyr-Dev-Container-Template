@@ -1,0 +1,34 @@
+// Example for Recording Device Proto Options
+// !!! Set these values according to what is required by the app !!!
+// <p>
+// This file mostly exists to restrict the size of messages
+// to what is possible in the app.
+// <p>
+
+// @author Scott Laboe
+// @version 0.1
+
+// Enable enum to string functions
+* enum_to_string:true
+
+// Data
+RecordedDataPacket.chData max_count:10
+ChannelData.data max_size:64
+
+// Setup
+RecordSetupPacket.channelSetup max_count:10
+RecordSetupPacket.pump max_count:1
+RecordSetupPacket.ep max_count:2
+
+// Device Info
+ChannelSrcDescriptor.channels max_count:5
+ChannelSrcDescriptor.name max_length:16
+DeviceInfoPacket.ch_srcs max_count:10
+DeviceInfoPacket.firmwareRev max_length:16
+DeviceInfoPacket.hardwareRev max_length:4
+DeviceInfoPacket.serial max_length:8
+DeviceInfoPacket.acq_endpoints max_count:2
+
+// USB Vendor Request Response
+USB_VendorReqResponse.errMsg max_length:57
+USB_VendorReqResponse.requestedData max_size:57

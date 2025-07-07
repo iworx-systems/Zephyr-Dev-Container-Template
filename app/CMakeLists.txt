@@ -1,6 +1,8 @@
 
 cmake_minimum_required(VERSION 3.20.0)
 
+#******************* NANOPB ****************
+set(NANOPB_OPTIONS "-DPB_FIELD_32BIT -f${CMAKE_CURRENT_LIST_DIR}/proto/recordingDevice.options")
 
 #******************* STATIC CODE ANALYSIS ****************
 # message(STATUS "Codechecker config: $ENV{APP_CODECHECKER_CONFIG_FILE}")
