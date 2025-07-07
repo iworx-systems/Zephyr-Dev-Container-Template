@@ -100,5 +100,14 @@ If you are using the ST-Link Nucleo L552ZEQ board and its built in programmer yo
 ### Sysbuild
 The "app/sysbuild" folder contains some example configs/overlays for the app and mcuboot. These are only present to give guidance on how you can add your own files. If you don't want to use sysbuild you can move the "prj.conf" in the "sysbuild/app" folder into "app" and delete the sysbuild folder. You will also need to remove "test_sysbuild()" from "app/CMakeLists.txt". For more infomartion on sysbuild refer to [Zephyr's documentation](https://docs.zephyrproject.org/latest/build/sysbuild/index.html).
 
+### Protocol Buffers
+Control and communication between a host (such as a PC) and the acquistion device occurs through [protocol buffers](https://protobuf.dev/). The protocol buffers are compilied into C using [nanopb](https://jpa.kapsi.fi/nanopb/docs/index.html). The application's [recodingDevice.options](app/proto/recordingDevice.options) file must be configured with the options required by the application. A reference for what options are available is available [here](https://jpa.kapsi.fi/nanopb/docs/reference.html#proto-file-options). The recodingDevice.proto file in the iworx protocol_buffers repo contains the protocol used to communicate with the device. When you launch the development container the repo is automatically cloned with west (unless west fails which will be visible in vscode's terminal). To see where the repo is cloned you can look at the applications [west manifest file](app/west.yml). The 'path' property is where the repo is cloned.
+
+### Acquisition Map
+An example acquisiton map is included in the [app.overlay](app/sysbuild/app/app.overlay) file. Use this as a reference to add an acquisition map for your application. For more information about the acquisition map look at the README in the [iworx-zephyr-modules](https://github.com/iworx-systems/iworx-zephyr-modules) repo. Note that this repo is also cloned by west to the location specified in the [west manifest file](app/west.yml).
+
+### Versioning
+The application's version is defined in the [VERSION](app/VERSION) file. The version set here is parsed by the build system and can be queried by a host device. This is used to determine when a DFU is needed so it is **very** important you update this file when a new firmware version is released.
+
 # Static Code Analysis
 Static code analysis is completed at build and served at "http://localhost:8001" using CodeChecker. Once the dev container has finished launching the CodeChecker server will be accessible.
